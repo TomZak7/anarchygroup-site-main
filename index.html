@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anarchy Group</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Roboto,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0d0d0d;
+color:#eee;
+overflow-x:hidden;
+transition:background .3s,color .3s;
+}
+
+body.light{
+background:#f4f4f4;
+color:#111;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* progress bar */
+
+#progressBar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:#ff3860;
+width:0%;
+z-index:5000;
+}
+
+/* cursor glow */
+
+#cursorGlow{
+position:fixed;
+width:260px;
+height:260px;
+border-radius:50%;
+pointer-events:none;
+background:radial-gradient(circle, rgba(255,56,96,.25) 0%, transparent 70%);
+transform:translate(-50%,-50%);
+z-index:1;
+}
+
+/* navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(20,20,20,0.55);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:3000;
+}
+
+body.light header{
+background:rgba(255,255,255,.65);
+border-bottom:1px solid rgba(0,0,0,.1);
+}
+
+header h1{
+color:#ff3860;
+font-size:22px;
+}
+
+/* nav */
+
+nav{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.nav-item{
+position:relative;
+cursor:pointer;
+}
+
+/* dropdown */
+
+.dropdown{
+position:absolute;
+top:36px;
+left:0;
+display:none;
+flex-direction:column;
+min-width:180px;
+border-radius:10px;
+background:rgba(20,20,20,0.95);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 12px 30px rgba(0,0,0,.4);
+z-index:4000;
+}
+
+body.light .dropdown{
+background:white;
+border:1px solid rgba(0,0,0,.1);
+}
+
+.dropdown a{
+padding:10px 14px;
+}
+
+.dropdown a:hover{
+background:rgba(255,255,255,.08);
+color:#ff3860;
+}
+
+/* theme button */
+
+.theme-btn{
+background:#ff3860;
+border:none;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* hamburger */
+
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+}
+
+.hamburger span{
+height:3px;
+width:24px;
+background:#ff3860;
+margin:4px 0;
+}
+
+/* hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+position:relative;
+overflow:hidden;
+}
+
+/* cyber grid */
+
+.hero::before{
+content:"";
+position:absolute;
+bottom:-50%;
+width:200%;
+height:200%;
+background:
+linear-gradient(#ff386030 1px, transparent 1px),
+linear-gradient(90deg,#ff386030 1px,transparent 1px);
+background-size:60px 60px;
+transform:perspective(500px) rotateX(60deg);
+animation:gridMove 12s linear infinite;
+}
+
+@keyframes gridMove{
+0%{background-position:0 0}
+100%{background-position:0 60px}
+}
+
+.hero h2{
+font-size:48px;
+margin-bottom:15px;
+z-index:2;
+}
+
+.hero p{
+max-width:650px;
+opacity:.9;
+z-index:2;
+}
+
+.hero-buttons{
+margin-top:20px;
+z-index:2;
+}
+
+.btn{
+display:inline-block;
+padding:10px 18px;
+margin:10px;
+border-radius:6px;
+background:#ff3860;
+color:white;
+font-weight:bold;
+}
+
+/* sections */
+
+section{
+padding:100px 30px;
+max-width:1100px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+section h2{
+color:#ff3860;
+margin-bottom:20px;
+}
+
+/* cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+perspective:1000px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:12px;
+border:1px solid #222;
+transition:transform .15s;
+transform-style:preserve-3d;
+}
+
+body.light .card{
+background:white;
+border:1px solid #ccc;
+}
+
+.card:hover{
+border-color:#ff3860;
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.7;
+}
+
+/* mobile */
+
+@media(max-width:800px){
+
+nav{
+display:none;
+position:absolute;
+top:60px;
+right:0;
+background:#111;
+flex-direction:column;
+padding:20px;
+border-radius:8px;
+}
+
+nav.active{
+display:flex;
+}
+
+body.light nav{
+background:white;
+}
+
+.hamburger{
+display:flex;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="cursorGlow"></div>
+<div id="progressBar"></div>
+
+<header>
+
+<h1>Anarchy Group</h1>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="navMenu">
+
+<div class="nav-item">
+<a href="#">Computing</a>
+<div class="dropdown">
+<a href="https://computing.anarchygroup.uk">Visit Site</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#">Photography</a>
+<div class="dropdown">
+<a href="https://photography.anarchygroup.uk">Visit Site</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#">Media</a>
+<div class="dropdown">
+<a href="https://media.anarchygroup.uk">Home</a>
+<a href="https://media.anarchygroup.uk/player">Player</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#">Publications</a>
+<div class="dropdown">
+<a href="https://publications.anarchygroup.uk">Visit Site</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#">ABA</a>
+<div class="dropdown">
+<a href="https://aba.anarchygroup.uk/abahome">Home</a>
+</div>
+</div>
+
+<div class="nav-item">
+<a href="#">Legacy</a>
+<div class="dropdown">
+<a href="http://legacy.anarchygroup.uk">Archive</a>
+</div>
+</div>
+
+<button class="theme-btn" id="themeToggle">Theme</button>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<h2>Welcome to Anarchy Group</h2>
+
+<p>
+A collaborative ecosystem of technology, media and creative digital projects.
+</p>
+
+<div class="hero-buttons">
+<a href="#divisions" class="btn">Explore Projects</a>
+<a href="https://media.anarchygroup.uk/player" class="btn">Open Player</a>
+</div>
+
+</div>
+
+<section id="divisions">
+
+<h2>Divisions</h2>
+
+<div class="cards">
+
+<a href="https://computing.anarchygroup.uk" class="card">
+<h3>Anarchy Computing</h3>
+<p>Software tools and development experiments.</p>
+</a>
+
+<a href="https://photography.anarchygroup.uk" class="card">
+<h3>Anarchy Photography</h3>
+<p>Creative photography and visual storytelling.</p>
+</a>
+
+<a href="https://media.anarchygroup.uk" class="card">
+<h3>Anarchy Media</h3>
+<p>Video production and streaming through Anarchy Player.</p>
+</a>
+
+<a href="https://publications.anarchygroup.uk" class="card">
+<h3>Anarchy Publications</h3>
+<p>Articles and digital publications.</p>
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Anarchy Group
+</footer>
+
+<script>
+
+const glow=document.getElementById("cursorGlow")
+document.addEventListener("mousemove",e=>{
+glow.style.left=e.clientX+"px"
+glow.style.top=e.clientY+"px"
+})
+
+const burger=document.getElementById("hamburger")
+const nav=document.getElementById("navMenu")
+
+burger.onclick=()=>nav.classList.toggle("active")
+
+document.querySelectorAll(".nav-item").forEach(item=>{
+item.querySelector("a").onclick=(e)=>{
+e.preventDefault()
+
+document.querySelectorAll(".dropdown").forEach(d=>{
+if(d!==item.querySelector(".dropdown")) d.style.display="none"
+})
+
+const drop=item.querySelector(".dropdown")
+drop.style.display=drop.style.display==="flex"?"none":"flex"
+}
+})
+
+window.addEventListener("scroll",()=>{
+let scrollTop=document.documentElement.scrollTop
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight
+let progress=(scrollTop/height)*100
+document.getElementById("progressBar").style.width=progress+"%"
+})
+
+document.querySelectorAll(".card").forEach(card=>{
+card.addEventListener("mousemove",e=>{
+const rect=card.getBoundingClientRect()
+const x=e.clientX-rect.left
+const y=e.clientY-rect.top
+const centerX=rect.width/2
+const centerY=rect.height/2
+const rotateX=-(y-centerY)/12
+const rotateY=(x-centerX)/12
+card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+})
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0) rotateY(0)"
+})
+})
+
+const toggle=document.getElementById("themeToggle")
+const prefersDark=window.matchMedia("(prefers-color-scheme: dark)").matches
+
+if(!prefersDark){
+document.body.classList.add("light")
+}
+
+toggle.onclick=()=>{
+document.body.classList.toggle("light")
+}
+
+</script>
+
+</body>
+</html>
