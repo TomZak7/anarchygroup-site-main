@@ -1,488 +1,499 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Welcome to Anarchy Group! Our unstructured chaotic org for all your needs.">
-<meta name="keywords" content="Media, Photography, Computing, Publications, ABA">
-<meta name="author" content="Anarchy Group">
-<meta name="theme-color" content="#ff8282">
-<meta http-equiv="content-language" content="en-gb">
-
-<title>Anarchy Group</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta property="og:title" content="Magic Plum Company — Becoming Prism Media Group">
+<meta property="og:description" content="Magic Plum Company, Femboy Media Corporation, United Broadcasting Company & Anarchy Group are merging to form Prism Media Group — an LGBTQ+ friendly media organisation.">
+<meta property="og:image" content="https://www.magicplum.co.uk/logo.jpg">
+<meta property="og:url" content="https://www.magicplum.co.uk/">
+<meta name="theme-color" content="#7C3AED">
+<title>Magic Plum Company → Prism Media Group — Merger Announcement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Roboto,sans-serif;
-scroll-behavior:smooth;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#ffffff;
+  --off:#F7F6F3;
+  --ink:#0D0D12;
+  --ink2:#3A3A4A;
+  --ink3:#7A7A8A;
+  --plum:#5C2D8F;
+  --plum2:#7B4BB5;
+  --plum3:#EDE5F8;
+  --prism:#7C3AED;
+  --prism2:#9D6CF0;
+  --prism3:#EDE5FA;
+  --accent:#E91E8C;
+  --accent2:#FF5CAA;
+  --accent3:#0EA5E9;
+  --accent4:#10B981;
+  --border:rgba(92,45,143,0.12);
+  --border2:rgba(92,45,143,0.22);
+  --radius:14px;
+  --rad-sm:8px;
+  --font-head:'Syne',sans-serif;
+  --font-body:'Instrument Sans',sans-serif;
+  --nav-h:68px;
 }
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--white);color:var(--ink);font-family:var(--font-body);line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--off)}
+::-webkit-scrollbar-thumb{background:var(--plum2);border-radius:99px}
 
-body{
-background:#0d0d0d;
-color:#eee;
-overflow-x:hidden;
-transition:background .3s,color .3s;
+#cursor{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.08s,width 0.2s,height 0.2s,opacity 0.2s;mix-blend-mode:multiply}
+#cursor.big{width:36px;height:36px;opacity:0.35}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(92,45,143,0.09)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--plum),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:#fff}
+.nav-logo-text{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.1}
+.nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--plum2);margin-top:1px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);text-decoration:none;letter-spacing:0.01em;transition:color 0.18s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.2s}
+.nav-links a:hover{color:var(--plum)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-announcement-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:99px;background:#FEF3C7;border:1.5px solid rgba(217,119,6,0.3);font-size:12px;font-weight:600;color:#B45309;letter-spacing:0.02em}
+.nav-announcement-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+
+/* ── Hero ── */
+.hero{min-height:100vh;padding:calc(var(--nav-h) + 4rem) 3rem 5rem;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 55% 55% at 80% 25%, rgba(92,45,143,0.07) 0%, transparent 65%),radial-gradient(ellipse 40% 40% at 20% 75%, rgba(233,30,140,0.05) 0%, transparent 60%),radial-gradient(ellipse 35% 35% at 50% 50%, rgba(124,58,237,0.05) 0%, transparent 60%)}
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(92,45,143,0.035) 1px, transparent 1px),linear-gradient(90deg, rgba(92,45,143,0.035) 1px, transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)}
+.hero-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100%;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--plum2);margin-bottom:1.5rem}
+.hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+.hero-eyebrow::after{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.1;letter-spacing:-0.03em;color:var(--ink);margin-bottom:1.25rem}
+.hero h1 .hl{background:linear-gradient(135deg,var(--plum),var(--prism));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .hl2{color:var(--accent);font-style:italic}
+.hero-desc{font-size:1.1rem;color:var(--ink2);line-height:1.8;max-width:620px;margin:0 auto 2rem}
+
+/* ── Merger Equation ── */
+.merger-section{margin:1.5rem auto 2.5rem;max-width:800px}
+.merger-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:1rem}
+.merger-brand{padding:11px 18px;border-radius:99px;font-family:var(--font-head);font-weight:700;font-size:0.9rem;letter-spacing:-0.01em;white-space:nowrap}
+.merger-brand.mpc{background:var(--plum3);color:var(--plum);border:1.5px solid var(--border2)}
+.merger-brand.fmc{background:#FFF0F5;color:#C2185B;border:1.5px solid rgba(194,24,91,0.25)}
+.merger-brand.ubc{background:#F0F9FF;color:#0369A1;border:1.5px solid rgba(3,105,161,0.25)}
+.merger-brand.ag{background:#FFF7ED;color:#C2410C;border:1.5px solid rgba(194,65,12,0.25)}
+.merger-plus{font-family:var(--font-head);font-weight:800;font-size:1.2rem;color:var(--ink3)}
+.merger-arrow{font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:var(--prism)}
+.merger-result{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;background:linear-gradient(135deg,var(--prism),#5B21B6);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.05rem;letter-spacing:-0.01em;box-shadow:0 8px 32px rgba(124,58,237,0.35);animation:glowPulse 2.5s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{box-shadow:0 8px 32px rgba(124,58,237,0.35)}50%{box-shadow:0 12px 40px rgba(124,58,237,0.55)}}
+.merger-sub{font-size:13px;color:var(--ink3);margin-top:0.75rem;font-weight:500}
+
+/* ── CTA Buttons ── */
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
+.btn-primary{padding:14px 30px;border-radius:99px;background:var(--prism);color:#fff;font-family:var(--font-body);font-size:14px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--prism2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(124,58,237,0.28)}
+.btn-secondary{padding:14px 30px;border-radius:99px;background:transparent;color:var(--plum);border:1.5px solid var(--border2);font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:var(--plum3);border-color:var(--plum);transform:translateY(-1px)}
+.btn-outline-white{padding:14px 30px;border-radius:99px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.22s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:#fff}
+
+/* ── Value Props Row ── */
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:780px;margin:0 auto}
+.value-card{padding:1.5rem 1.25rem;border-radius:var(--radius);border:1px solid var(--border);background:#fff;text-align:center;transition:all 0.22s}
+.value-card:hover{border-color:var(--prism);box-shadow:0 8px 24px rgba(124,58,237,0.08);transform:translateY(-2px)}
+.value-icon{font-size:2rem;margin-bottom:0.75rem;display:block}
+.value-title{font-family:var(--font-head);font-weight:700;font-size:0.95rem;color:var(--ink);margin-bottom:0.35rem;letter-spacing:-0.01em}
+.value-desc{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+/* ── Sections ── */
+.section{padding:5rem 3rem;max-width:1100px;margin:0 auto}
+.section-alt{background:var(--off);padding:5rem 3rem}
+.section-alt .section{padding:0;background:none}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--plum2);margin-bottom:0.75rem}
+.section-label::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:2px}
+.section-title{font-family:var(--font-head);font-weight:800;font-size:clamp(1.7rem,2.8vw,2.4rem);letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.75rem;line-height:1.15}
+.section-desc{font-size:1rem;color:var(--ink2);max-width:600px;line-height:1.7;margin-bottom:2.5rem}
+
+/* ── Why Cards ── */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.why-card{padding:1.75rem;border-radius:var(--radius);border:1px solid var(--border);background:#fff;transition:all 0.22s}
+.why-card:hover{border-color:var(--prism);box-shadow:0 6px 20px rgba(124,58,237,0.07)}
+.why-num{font-family:var(--font-head);font-weight:800;font-size:2rem;color:var(--prism);line-height:1;margin-bottom:0.5rem}
+.why-title{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.4rem;letter-spacing:-0.01em}
+.why-desc{font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ── Transition Table ── */
+.transition-table-wrap{overflow-x:auto;margin-top:1rem}
+.transition-table{width:100%;border-collapse:collapse;font-size:14px}
+.transition-table thead th{text-align:left;padding:14px 16px;font-family:var(--font-head);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--plum);background:var(--plum3);border-bottom:2px solid var(--border2)}
+.transition-table thead th:first-child{border-radius:var(--rad-sm) 0 0 0}
+.transition-table thead th:last-child{border-radius:0 var(--rad-sm) 0 0}
+.transition-table tbody td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.5}
+.transition-table tbody tr{transition:background 0.18s}
+.transition-table tbody tr:hover{background:rgba(124,58,237,0.02)}
+.transition-table .old-name{font-weight:600;color:var(--ink)}
+.transition-table .new-name{font-weight:700;color:var(--prism)}
+.transition-table .status-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;letter-spacing:0.03em}
+.status-merging{background:#FEF3C7;color:#B45309;border:1px solid rgba(217,119,6,0.25)}
+.status-becoming{background:#EDE5FA;color:var(--plum);border:1px solid var(--border2)}
+.status-unchanged{background:#F0FDF4;color:#059669;border:1px solid rgba(5,150,105,0.25)}
+.status-retired{background:#FFF1F2;color:#BE123C;border:1px solid rgba(190,18,60,0.2)}
+
+/* ── Timeline ── */
+.timeline{position:relative;padding-left:2rem;margin-top:1rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--prism),var(--accent));border-radius:1px}
+.timeline-step{position:relative;margin-bottom:2rem;padding-left:1.5rem}
+.timeline-step:last-child{margin-bottom:0}
+.timeline-step::before{content:'';position:absolute;left:-2.35rem;top:0.35rem;width:12px;height:12px;border-radius:50%;background:var(--prism);border:2px solid #fff;box-shadow:0 0 0 3px var(--prism3)}
+.timeline-step.done::before{background:var(--accent4);box-shadow:0 0 0 3px rgba(16,185,129,0.15)}
+.timeline-step.current::before{background:var(--accent);box-shadow:0 0 0 3px rgba(233,30,140,0.2);animation:pulse 2s infinite}
+.timeline-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.2rem}
+.timeline-title{font-family:var(--font-head);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:0.3rem}
+.timeline-desc{font-size:13.5px;color:var(--ink2);line-height:1.6}
+
+/* ── Temporary Sites ── */
+.temp-sites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.temp-site-card{padding:1.5rem;border-radius:var(--radius);border:1px solid var(--border);background:#fff;text-decoration:none;color:inherit;transition:all 0.22s;display:flex;flex-direction:column;gap:0.5rem}
+.temp-site-card:hover{border-color:var(--prism);box-shadow:0 8px 24px rgba(124,58,237,0.1);transform:translateY(-2px)}
+.temp-site-card .ts-icon{font-size:1.6rem}
+.temp-site-card .ts-name{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--ink);letter-spacing:-0.01em}
+.temp-site-card .ts-url{font-size:12px;color:var(--ink3);font-weight:500;word-break:break-all}
+.temp-site-card .ts-arrow{font-size:12px;font-weight:600;color:var(--prism);display:flex;align-items:center;gap:4px;margin-top:auto}
+.domain-coming{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:99px;background:#FEF3C7;border:1px solid rgba(217,119,6,0.3);font-size:12px;font-weight:600;color:#B45309;margin-top:2rem}
+
+/* ── Footer ── */
+footer{background:var(--ink);color:#fff;padding:3rem;text-align:center}
+.footer-inner{max-width:700px;margin:0 auto}
+.footer-text{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7}
+.footer-text strong{color:#fff}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.18s}
+.footer-links a:hover{color:#fff}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+@media(max-width:900px){
+  .values-row{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
 }
-
-body.light{
-background:#f4f4f4;
-color:#111;
+@media(max-width:600px){
+  nav{padding:0 1.25rem}
+  .hero{padding:calc(var(--nav-h)+3rem) 1.25rem 3rem}
+  .section{padding:3.5rem 1.25rem}
+  .section-alt{padding:3.5rem 1.25rem}
+  .merger-row{gap:0.4rem}
+  .merger-brand{font-size:0.78rem;padding:9px 14px}
+  .hero-btns{flex-direction:column;align-items:center}
+  .hero-btns .btn-primary,.hero-btns .btn-secondary{width:100%;justify-content:center}
 }
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-/* progress bar */
-
-#progressBar{
-position:fixed;
-top:0;
-left:0;
-height:4px;
-background:#ff3860;
-width:0%;
-z-index:5000;
-}
-
-/* cursor glow */
-
-#cursorGlow{
-position:fixed;
-width:260px;
-height:260px;
-border-radius:50%;
-pointer-events:none;
-background:radial-gradient(circle, rgba(255,56,96,.25) 0%, transparent 70%);
-transform:translate(-50%,-50%);
-z-index:1;
-}
-
-/* navbar */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:rgba(20,20,20,0.55);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,.08);
-z-index:3000;
-}
-
-body.light header{
-background:rgba(255,255,255,.65);
-border-bottom:1px solid rgba(0,0,0,.1);
-}
-
-header h1{
-color:#ff3860;
-font-size:22px;
-}
-
-/* nav */
-
-nav{
-display:flex;
-align-items:center;
-gap:18px;
-}
-
-.nav-item{
-position:relative;
-cursor:pointer;
-}
-
-/* dropdown */
-
-.dropdown{
-position:absolute;
-top:36px;
-left:0;
-display:none;
-flex-direction:column;
-min-width:180px;
-border-radius:10px;
-background:rgba(20,20,20,0.95);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 12px 30px rgba(0,0,0,.4);
-z-index:4000;
-}
-
-body.light .dropdown{
-background:white;
-border:1px solid rgba(0,0,0,.1);
-}
-
-.dropdown a{
-padding:10px 14px;
-}
-
-.dropdown a:hover{
-background:rgba(255,255,255,.08);
-color:#ff3860;
-}
-
-/* theme button */
-
-.theme-btn{
-background:#ff3860;
-border:none;
-color:white;
-padding:6px 12px;
-border-radius:6px;
-cursor:pointer;
-font-weight:600;
-}
-
-/* hamburger */
-
-.hamburger{
-display:none;
-flex-direction:column;
-cursor:pointer;
-}
-
-.hamburger span{
-height:3px;
-width:24px;
-background:#ff3860;
-margin:4px 0;
-}
-
-/* hero */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-position:relative;
-overflow:hidden;
-}
-
-/* cyber grid */
-
-.hero::before{
-content:"";
-position:absolute;
-bottom:-50%;
-width:200%;
-height:200%;
-background:
-linear-gradient(#ff386030 1px, transparent 1px),
-linear-gradient(90deg,#ff386030 1px,transparent 1px);
-background-size:60px 60px;
-transform:perspective(500px) rotateX(60deg);
-animation:gridMove 12s linear infinite;
-}
-
-@keyframes gridMove{
-0%{background-position:0 0}
-100%{background-position:0 60px}
-}
-
-.hero h2{
-font-size:48px;
-margin-bottom:15px;
-z-index:2;
-}
-
-.hero p{
-max-width:650px;
-opacity:.9;
-z-index:2;
-}
-
-.hero-buttons{
-margin-top:20px;
-z-index:2;
-}
-
-.btn{
-display:inline-block;
-padding:10px 18px;
-margin:10px;
-border-radius:6px;
-background:#ff3860;
-color:white;
-font-weight:bold;
-}
-
-/* sections */
-
-section{
-padding:100px 30px;
-max-width:1100px;
-margin:auto;
-position:relative;
-z-index:2;
-}
-
-section h2{
-color:#ff3860;
-margin-bottom:20px;
-}
-
-/* cards */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-perspective:1000px;
-}
-
-.card{
-background:#111;
-padding:25px;
-border-radius:12px;
-border:1px solid #222;
-transition:transform .15s;
-transform-style:preserve-3d;
-}
-
-body.light .card{
-background:white;
-border:1px solid #ccc;
-}
-
-.card:hover{
-border-color:#ff3860;
-box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-/* footer */
-
-footer{
-text-align:center;
-padding:40px;
-opacity:.7;
-}
-
-/* mobile */
-
-@media(max-width:800px){
-
-nav{
-display:none;
-position:absolute;
-top:60px;
-right:0;
-background:#111;
-flex-direction:column;
-padding:20px;
-border-radius:8px;
-}
-
-nav.active{
-display:flex;
-}
-
-body.light nav{
-background:white;
-}
-
-.hamburger{
-display:flex;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<div id="cursorGlow"></div>
-<div id="progressBar"></div>
+<div id="cursor"></div>
 
-<header>
-
-<h1>Anarchy Group</h1>
-
-<div class="hamburger" id="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
-
-<nav id="navMenu">
-
-<div class="nav-item">
-<a href="#">Computing</a>
-<div class="dropdown">
-<a href="https://computing.anarchygroup.uk">Visit Site</a>
-</div>
-</div>
-
-<div class="nav-item">
-<a href="#">Photography</a>
-<div class="dropdown">
-<a href="https://photography.anarchygroup.uk">Visit Site</a>
-</div>
-</div>
-
-<div class="nav-item">
-<a href="#">Media</a>
-<div class="dropdown">
-<a href="https://media.anarchygroup.uk">Home</a>
-<a href="https://media.anarchygroup.uk/player">Player</a>
-</div>
-</div>
-
-<div class="nav-item">
-<a href="#">Publications</a>
-<div class="dropdown">
-<a href="https://publications.anarchygroup.uk">Visit Site</a>
-</div>
-</div>
-
-<div class="nav-item">
-<a href="#">ABA</a>
-<div class="dropdown">
-<a href="https://aba.anarchygroup.uk/">Home</a>
-</div>
-</div>
-
-<div class="nav-item">
-<a href="#">Legacy</a>
-<div class="dropdown">
-<a href="http://legacy.anarchygroup.uk">Archive</a>
-</div>
-</div>
-
-<button class="theme-btn" id="themeToggle">Theme</button>
-
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">✦</div>
+    <div>
+      <div class="nav-logo-text">Magic Plum Company</div>
+      <div class="nav-logo-sub">United Kingdom</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#why">Why We're Merging</a>
+    <a href="#transition">What's Changing</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#sites">New Sites</a>
+    <span class="nav-announcement-badge"><span class="badge-dot"></span> Merger in Progress</span>
+  </div>
 </nav>
 
-</header>
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">A New Chapter Begins</div>
+    <h1 class="reveal reveal-delay-1">We're becoming<br><span class="hl">Prism Media Group</span></h1>
+    <p class="hero-desc reveal reveal-delay-2">Magic Plum Company, Femboy Media Corporation, United Broadcasting Company, and Anarchy Group are joining forces to create something bigger — a unified, <strong style="color:var(--ink)">LGBTQ+ friendly media organisation</strong> built for bold storytelling and authentic representation.</p>
 
-<div class="hero">
+    <div class="merger-section reveal reveal-delay-2">
+      <div class="merger-row">
+        <span class="merger-brand mpc">✦ Magic Plum Co</span>
+        <span class="merger-plus">+</span>
+        <span class="merger-brand fmc">🌈 Femboy Media Corp</span>
+        <span class="merger-plus">+</span>
+        <span class="merger-brand ubc">📡 United Broadcasting</span>
+        <span class="merger-plus">+</span>
+        <span class="merger-brand ag">🔥 Anarchy Group</span>
+      </div>
+      <div class="merger-row">
+        <span class="merger-arrow">→</span>
+        <span class="merger-result">💎 Prism Media Group</span>
+      </div>
+      <p class="merger-sub reveal reveal-delay-3">One identity. One mission. Bold, colourful, and proudly inclusive.</p>
+    </div>
 
-<h2>Welcome to Anarchy Group</h2>
+    <div class="hero-btns reveal reveal-delay-3">
+      <a href="#sites" class="btn-primary">Visit Temporary Sites <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#why" class="btn-secondary">Why We're Merging</a>
+    </div>
 
-<p>
-A collaborative ecosystem of technology, media and creative digital projects.
-</p>
-
-<div class="hero-buttons">
-<a href="#divisions" class="btn">Explore Projects</a>
-<a href="https://media.anarchygroup.uk/player" class="btn">Open Player</a>
-</div>
-
-</div>
-
-<section id="divisions">
-
-<h2>Divisions</h2>
-
-<div class="cards">
-
-<a href="https://computing.anarchygroup.uk" class="card">
-<h3>Anarchy Computing</h3>
-<p>Software tools and development experiments.</p>
-</a>
-
-<a href="https://photography.anarchygroup.uk" class="card">
-<h3>Anarchy Photography</h3>
-<p>Creative photography and visual storytelling.</p>
-</a>
-
-<a href="https://media.anarchygroup.uk" class="card">
-<h3>Anarchy Media</h3>
-<p>Video production and streaming through Anarchy Player.</p>
-</a>
-
-<a href="https://publications.anarchygroup.uk" class="card">
-<h3>Anarchy Publications</h3>
-<p>Articles and digital publications.</p>
-</a>
-
-</div>
-
+    <div class="values-row reveal reveal-delay-3">
+      <div class="value-card">
+        <span class="value-icon">🏳️‍🌈</span>
+        <div class="value-title">LGBTQ+ Friendly</div>
+        <div class="value-desc">A media org built by and for diverse communities, with inclusivity at our core.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🎨</span>
+        <div class="value-title">Creative Powerhouse</div>
+        <div class="value-desc">Four brands united — entertainment, broadcasting, media, and creative chaos.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🇬🇧</span>
+        <div class="value-title">Proudly British</div>
+        <div class="value-desc">Rooted in the UK, creating content and media that reflects modern Britain.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ═══════════════════════ WHY ═══════════════════════ -->
+<div class="section-alt" id="why">
+  <div class="section">
+    <div class="section-label">The Reason</div>
+    <h2 class="section-title reveal">Why we're merging</h2>
+    <p class="section-desc reveal reveal-delay-1">For too long, our projects have been scattered across different brands, domains, and identities. It's time to bring everything under one roof — with one clear voice.</p>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-num">01</div>
+        <div class="why-title">Simplify Everything</div>
+        <div class="why-desc">Nine separate brands was too many. We're consolidating our media projects into one group — Prism Media Group — so our audience knows exactly who we are and what we stand for.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-num">02</div>
+        <div class="why-title">Stronger LGBTQ+ Identity</div>
+        <div class="why-desc">Femboy Media Corporation brought LGBTQ+ representation to the forefront. Rather than keeping it as one brand among many, we're baking that inclusivity into the DNA of the entire group.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-num">03</div>
+        <div class="why-title">Bigger & Bolder Together</div>
+        <div class="why-desc">United Broadcasting's streaming reach, Anarchy Group's creative edge, and Magic Plum's infrastructure are stronger combined than apart. Prism Media Group is the sum of our best parts.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-num">04</div>
+        <div class="why-title">One Identity Layer</div>
+        <div class="why-desc">Plum Identity is becoming <strong>MyPMGI</strong> — a single sign-on and account hub for everything Prism. One login to access all our media, tech services, and future platforms.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TRANSITION TABLE ═══════════════════════ -->
+<section class="section" id="transition">
+  <div class="section-label">The Changes</div>
+  <h2 class="section-title reveal">What each brand becomes</h2>
+  <p class="section-desc reveal reveal-delay-1">Here's exactly what's happening to every project under the Magic Plum umbrella.</p>
+  <div class="transition-table-wrap reveal reveal-delay-2">
+    <table class="transition-table">
+      <thead>
+        <tr>
+          <th>Current Brand</th>
+          <th>Becomes</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="old-name">✦ Magic Plum Company</td>
+          <td class="new-name">Prism Media Group</td>
+          <td><span class="status-badge status-merging">Merging</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">🌈 Femboy Media Corporation</td>
+          <td class="new-name">Prism Media Group</td>
+          <td><span class="status-badge status-merging">Merging</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">📡 United Broadcasting Company</td>
+          <td class="new-name">Prism Media Group</td>
+          <td><span class="status-badge status-merging">Merging</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">🔥 Anarchy Group</td>
+          <td class="new-name">Prism Media Group</td>
+          <td><span class="status-badge status-merging">Merging</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">📺 UK Television Clips</td>
+          <td class="new-name">Prism Media Group</td>
+          <td><span class="status-badge status-merging">Merging</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">💻 MagicByte ICT</td>
+          <td class="new-name">Prism Technology</td>
+          <td><span class="status-badge status-becoming">Rebranding</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">🪪 Plum Identity</td>
+          <td class="new-name">MyPMGI</td>
+          <td><span class="status-badge status-becoming">Rebranding</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">📚 Plum Academy</td>
+          <td class="new-name">—</td>
+          <td><span class="status-badge status-retired">Retired</span></td>
+        </tr>
+        <tr>
+          <td class="old-name">📐 Revit Helpdesk</td>
+          <td class="new-name">—</td>
+          <td><span class="status-badge status-retired">Retired</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TIMELINE ═══════════════════════ -->
+<div class="section-alt" id="timeline">
+  <div class="section">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title reveal">How the switch is happening</h2>
+    <p class="section-desc reveal reveal-delay-1">We're rolling this out in phases to keep everything running smoothly. Here's where we are right now.</p>
+    <div class="timeline reveal reveal-delay-2">
+      <div class="timeline-step done">
+        <div class="timeline-label">Phase 1 — Complete</div>
+        <div class="timeline-title">Announcement & Planning</div>
+        <div class="timeline-desc">Internal restructuring, brand strategy finalised, and this landing page published. The old Magic Plum site now redirects here.</div>
+      </div>
+      <div class="timeline-step current">
+        <div class="timeline-label">Phase 2 — In Progress</div>
+        <div class="timeline-title">Temporary Sites Live</div>
+        <div class="timeline-desc">Prism Media Group and Prism Technology are now accessible via temporary URLs. Content and services are being migrated across.</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-label">Phase 3 — Coming Soon</div>
+        <div class="timeline-title">Official Domain Launch</div>
+        <div class="timeline-desc">The permanent domain <strong>prismmediagroup.co.uk</strong> will go live. MyPMGI identity platform launches. All old domains redirect to the new home.</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-label">Phase 4 — Final</div>
+        <div class="timeline-title">Legacy Brands Retired</div>
+        <div class="timeline-desc">Old domains decommissioned. All traffic, email, and services fully migrated. Magic Plum Company officially becomes Prism Media Group.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TEMPORARY SITES ═══════════════════════ -->
+<section class="section" id="sites">
+  <div class="section-label">Visit Now</div>
+  <h2 class="section-title reveal">Temporary new sites</h2>
+  <p class="section-desc reveal reveal-delay-1">While we secure the permanent domain, you can visit the new Prism sites right now via these temporary URLs.</p>
+  <div class="temp-sites-grid">
+    <a href="https://prism.magicplum.co.uk" class="temp-site-card reveal reveal-delay-1">
+      <span class="ts-icon">💎</span>
+      <span class="ts-name">Prism Media Group</span>
+      <span class="ts-url">prism.magicplum.co.uk</span>
+      <span class="ts-arrow">Visit Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="https://ict.magicplum.co.uk" class="temp-site-card reveal reveal-delay-2">
+      <span class="ts-icon">💻</span>
+      <span class="ts-name">Prism Technology</span>
+      <span class="ts-url">ict.magicplum.co.uk</span>
+      <span class="ts-arrow">Visit Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="https://identity.magicplum.co.uk" class="temp-site-card reveal reveal-delay-3">
+      <span class="ts-icon">🪪</span>
+      <span class="ts-name">MyPMGI</span>
+      <span class="ts-url">identity.magicplum.co.uk</span>
+      <span class="ts-arrow">Visit Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+  <div class="domain-coming reveal reveal-delay-3">
+    🏗️ <strong>Official domain coming soon:</strong> prismmediagroup.co.uk
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 <footer>
-© 2026 Anarchy Group
+  <div class="footer-inner">
+    <p class="footer-text">
+      <strong>Magic Plum Company</strong> is becoming <strong>Prism Media Group</strong> — an LGBTQ+ friendly media organisation.<br>
+      This is a transitional page. The full site is coming to <strong>prismmediagroup.co.uk</strong> soon.
+    </p>
+    <div class="footer-links">
+      <a href="#why">Why We're Merging</a>
+      <a href="#transition">What's Changing</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#sites">Temporary Sites</a>
+      <a href="https://prism.magicplum.co.uk">Prism Media Group</a>
+    </div>
+  </div>
 </footer>
 
 <script>
+// ═══════════════════════════════════════════════
+//  CURSOR
+// ═══════════════════════════════════════════════
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+}, { passive: true });
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+});
 
-const glow=document.getElementById("cursorGlow")
-document.addEventListener("mousemove",e=>{
-glow.style.left=e.clientX+"px"
-glow.style.top=e.clientY+"px"
-})
+// ═══════════════════════════════════════════════
+//  SCROLL REVEAL
+// ═══════════════════════════════════════════════
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
 
-const burger=document.getElementById("hamburger")
-const nav=document.getElementById("navMenu")
-
-burger.onclick=()=>nav.classList.toggle("active")
-
-document.querySelectorAll(".nav-item").forEach(item=>{
-item.querySelector("a").onclick=(e)=>{
-e.preventDefault()
-
-document.querySelectorAll(".dropdown").forEach(d=>{
-if(d!==item.querySelector(".dropdown")) d.style.display="none"
-})
-
-const drop=item.querySelector(".dropdown")
-drop.style.display=drop.style.display==="flex"?"none":"flex"
-}
-})
-
-window.addEventListener("scroll",()=>{
-let scrollTop=document.documentElement.scrollTop
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight
-let progress=(scrollTop/height)*100
-document.getElementById("progressBar").style.width=progress+"%"
-})
-
-document.querySelectorAll(".card").forEach(card=>{
-card.addEventListener("mousemove",e=>{
-const rect=card.getBoundingClientRect()
-const x=e.clientX-rect.left
-const y=e.clientY-rect.top
-const centerX=rect.width/2
-const centerY=rect.height/2
-const rotateX=-(y-centerY)/12
-const rotateY=(x-centerX)/12
-card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-})
-card.addEventListener("mouseleave",()=>{
-card.style.transform="rotateX(0) rotateY(0)"
-})
-})
-
-const toggle=document.getElementById("themeToggle")
-const prefersDark=window.matchMedia("(prefers-color-scheme: dark)").matches
-
-if(!prefersDark){
-document.body.classList.add("light")
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
 
-toggle.onclick=()=>{
-document.body.classList.toggle("light")
-}
+// ═══════════════════════════════════════════════
+//  NAV SCROLL SHADOW
+// ═══════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
+// ═══════════════════════════════════════════════
+//  SMOOTH SCROLL FOR ANCHOR LINKS
+// ═══════════════════════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', () => {
+  initReveal();
+});
 </script>
-
 </body>
 </html>
